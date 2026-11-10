@@ -4185,7 +4185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programador UI, Sound Design & Game designer
+  m_text: Programador UI, Sound Design & Game Designer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40905f54ad810ef4896a7040428df84f, type: 2}
   m_sharedMaterial: {fileID: 8435531156728729801, guid: 40905f54ad810ef4896a7040428df84f, type: 2}
