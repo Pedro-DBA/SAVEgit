@@ -31,16 +31,13 @@ public class PauseMenu : MonoBehaviour
 #endif
     }
 
-    // Ligue o botão do canto da tela a este método
     public void TogglePause() => SetPaused(!isPaused);
 
-    // Ligue o botão "Continuar" a este método
     public void Resume() => SetPaused(false);
 
-    // Ligue o botão "Menu" a este método
     public void GoToMenu()
     {
-        Time.timeScale = 1f; // sem isso o menu carregaria congelado
+        Time.timeScale = 1f;
         SceneManager.LoadScene(menuSceneName);
     }
 
@@ -53,6 +50,6 @@ public class PauseMenu : MonoBehaviour
 
     private void OnDestroy()
     {
-        Time.timeScale = 1f; // segurança ao trocar de cena
+        Time.timeScale = 1f;
     }
 }
