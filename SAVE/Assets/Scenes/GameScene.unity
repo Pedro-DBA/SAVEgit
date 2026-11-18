@@ -1154,9 +1154,10 @@ MonoBehaviour:
     deactivate: []
     skybox: {fileID: 2100000, guid: 1376009c77f1a7748bfcad35351c2e49, type: 2}
     newMusic: {fileID: 8300000, guid: 939a26c171a07ba4fb215e924294190d, type: 3}
-  musicSource: {fileID: 1464975251}
+  gameMusicSource: {fileID: 1581077979}
+  endingSource: {fileID: 1464975251}
   badEndingMusic: {fileID: 8300000, guid: 9511ccbac74b75d4cb0baaaaf80e96f9, type: 3}
-  hideOnBadEnding:
+  hideOnEnding:
   - {fileID: 77878218}
   - {fileID: 639594103}
   goodEndingPanel: {fileID: 1285050738}
