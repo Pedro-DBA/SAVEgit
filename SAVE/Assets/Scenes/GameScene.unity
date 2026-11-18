@@ -502,15 +502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8728953026869373153, guid: bdfe3a253042dbc48bd3e3c2a83ad485, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -791
+      value: -731
       objectReference: {fileID: 0}
     - target: {fileID: 8728953026869373153, guid: bdfe3a253042dbc48bd3e3c2a83ad485, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 179.9
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8728953026869373153, guid: bdfe3a253042dbc48bd3e3c2a83ad485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -513.7
+      value: -591
       objectReference: {fileID: 0}
     - target: {fileID: 8728953026869373153, guid: bdfe3a253042dbc48bd3e3c2a83ad485, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1103,7 +1103,8 @@ MonoBehaviour:
     badEndingPanel: {fileID: 259931608}
     particlesToStop:
     - {fileID: 598185549}
-    particlesToPlay: []
+    particlesToPlay:
+    - {fileID: 20646012}
     activate: []
     deactivate: []
     skybox: {fileID: 0}
@@ -1115,7 +1116,8 @@ MonoBehaviour:
     - {fileID: 1267197356}
     - {fileID: 1800685245}
     - {fileID: 2036095136}
-    particlesToPlay: []
+    particlesToPlay:
+    - {fileID: 967639504}
     activate: []
     deactivate: []
     skybox: {fileID: 0}
@@ -1125,8 +1127,6 @@ MonoBehaviour:
     badEndingPanel: {fileID: 1426956582}
     particlesToStop: []
     particlesToPlay:
-    - {fileID: 967639504}
-    - {fileID: 20646012}
     - {fileID: 1869285968}
     activate:
     - {fileID: 261059517}
@@ -2565,7 +2565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &141241595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12724,7 +12724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 090d702e64d7d954691de08040c96eb8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16079,7 +16079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8728953026869373153, guid: bdfe3a253042dbc48bd3e3c2a83ad485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -394
+      value: -437
       objectReference: {fileID: 0}
     - target: {fileID: 8728953026869373153, guid: bdfe3a253042dbc48bd3e3c2a83ad485, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31034,7 +31034,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: "Voc\xEA n\xE3o conseguiu impedir as chamas que cresceram cada vez mais
+    r\xE1pido e consumiram violentamente a floresta. Citysvile perdeu uma de suas
+    maiores fontes de vida."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40905f54ad810ef4896a7040428df84f, type: 2}
   m_sharedMaterial: {fileID: 8435531156728729801, guid: 40905f54ad810ef4896a7040428df84f, type: 2}
