@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
@@ -13,24 +14,27 @@ public class GameplayManager : MonoBehaviour
         public GameObject badEndingPanel;
 
         [Header("Ao acertar")]
-        public ParticleSystem[] particlesToStop;   // para de emitir (as partículas somem aos poucos)
-        public ParticleSystem[] particlesToPlay;   // ativa o objeto e toca
-        public GameObject[] activate;              // ex.: modelo da represa
-        public GameObject[] deactivate;            // ex.: Panel_Game, Panel_Pause
-        public Material skybox;                    // opcional
-        public AudioClip newMusic;                 // opcional
+        public ParticleSystem[] particlesToStop;
+        public ParticleSystem[] particlesToPlay;
+        public GameObject[] activate;
+        public GameObject[] deactivate;
+        public Material skybox;
+        public AudioClip newMusic; // para a música do jogo e toca esta uma vez
     }
 
     [SerializeField] private Step[] steps;
 
     [Header("Áudio")]
-    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource gameMusicSource; // AudioManager (música principal)
+    [FormerlySerializedAs("musicSource")]
+    [SerializeField] private AudioSource endingSource;    // ABadEndingManager (Loop desligado)
     [SerializeField] private AudioClip badEndingMusic;
 
     [Header("Finais")]
-    [SerializeField] private GameObject[] hideOnBadEnding;   // Panel_Game, Panel_Pause
-    [SerializeField] private GameObject goodEndingPanel;     // opcional
-    [SerializeField] private PauseMenu pauseMenu;            // para desligar o Esc no final
+    [FormerlySerializedAs("hideOnBadEnding")]
+    [SerializeField] private GameObject[] hideOnEnding;   // Panel_Game, Panel_Pause
+    [SerializeField] private GameObject goodEndingPanel;
+    [SerializeField] private PauseMenu pauseMenu;
 
     [Header("Cenas")]
     [SerializeField] private string menuSceneName = "MainMenuScene";
@@ -42,7 +46,7 @@ public class GameplayManager : MonoBehaviour
     {
         for (int i = 0; i < steps.Length; i++)
         {
-            int index = i; // necessário para o clique lembrar o número certo
+            int index = i;
             steps[i].button.onClick.AddListener(() => OnButtonClicked(index));
 
             if (steps[i].badEndingPanel != null)
@@ -57,12 +61,12 @@ public class GameplayManager : MonoBehaviour
         if (finished) return;
 
         if (index == currentStep) CompleteStep(steps[index]);
-        else BadEnding(currentStep); // erro: o final depende da etapa atual
+        else BadEnding(currentStep);
     }
 
     private void CompleteStep(Step step)
     {
-        step.button.interactable = false; // não dá para clicar de novo
+        step.button.interactable = false;
 
         foreach (var ps in step.particlesToStop)
             ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
@@ -82,7 +86,7 @@ public class GameplayManager : MonoBehaviour
             DynamicGI.UpdateEnvironment();
         }
 
-        if (step.newMusic != null) PlayMusic(step.newMusic, true);
+        if (step.newMusic != null) PlayEndingMusic(step.newMusic);
 
         currentStep++;
         if (currentStep >= steps.Length) FinishGame();
@@ -90,31 +94,36 @@ public class GameplayManager : MonoBehaviour
 
     private void BadEnding(int stepIndex)
     {
-        finished = true;
-        if (pauseMenu != null) pauseMenu.enabled = false;
-
-        foreach (var go in hideOnBadEnding) go.SetActive(false);
-
+        EndGame();
         steps[stepIndex].badEndingPanel.SetActive(true);
-        PlayMusic(badEndingMusic, false);
+        PlayEndingMusic(badEndingMusic);
     }
 
     private void FinishGame()
     {
-        finished = true;
-        if (pauseMenu != null) pauseMenu.enabled = false;
+        EndGame();
         if (goodEndingPanel != null) goodEndingPanel.SetActive(true);
     }
 
-    private void PlayMusic(AudioClip clip, bool loop)
+    // Comum aos dois finais: trava o jogo e esconde a interface
+    private void EndGame()
     {
-        musicSource.Stop();
-        musicSource.clip = clip;
-        musicSource.loop = loop;
-        musicSource.Play();
+        finished = true;
+        if (pauseMenu != null) pauseMenu.enabled = false;
+        foreach (var go in hideOnEnding) go.SetActive(false);
     }
 
-    // Ligue aos botões dos painéis de bad ending
+    // Para a música do jogo e toca a música do final uma única vez
+    private void PlayEndingMusic(AudioClip clip)
+    {
+        if (gameMusicSource != null) gameMusicSource.Stop();
+
+        endingSource.Stop();
+        endingSource.loop = false;
+        endingSource.clip = clip;
+        endingSource.Play();
+    }
+
     public void BackToMenu()
     {
         Time.timeScale = 1f;
