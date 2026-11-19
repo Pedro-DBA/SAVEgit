@@ -105,7 +105,6 @@ public class GameplayManager : MonoBehaviour
         if (goodEndingPanel != null) goodEndingPanel.SetActive(true);
     }
 
-    // Comum aos dois finais: trava o jogo e esconde a interface
     private void EndGame()
     {
         finished = true;
@@ -113,7 +112,6 @@ public class GameplayManager : MonoBehaviour
         foreach (var go in hideOnEnding) go.SetActive(false);
     }
 
-    // Para a música do jogo e toca a música do final uma única vez
     private void PlayEndingMusic(AudioClip clip)
     {
         if (gameMusicSource != null) gameMusicSource.Stop();
