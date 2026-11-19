@@ -1137,7 +1137,8 @@ MonoBehaviour:
     button: {fileID: 712924862}
     badEndingPanel: {fileID: 141241594}
     particlesToStop: []
-    particlesToPlay: []
+    particlesToPlay:
+    - {fileID: 811261694}
     activate: []
     deactivate:
     - {fileID: 1769689325}
@@ -1148,7 +1149,8 @@ MonoBehaviour:
   - name: Fazenda
     button: {fileID: 1074896272}
     badEndingPanel: {fileID: 154236060}
-    particlesToStop: []
+    particlesToStop:
+    - {fileID: 811261694}
     particlesToPlay: []
     activate: []
     deactivate: []
@@ -13493,6 +13495,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809735150}
   m_CullTransparentMesh: 1
+--- !u!198 &811261694 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8381868087676101157, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+  m_PrefabInstance: {fileID: 6544257778821518968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &821451365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35570,6 +35577,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d4c87d8f728569488b49a932232a839, type: 3}
   m_PrefabInstance: {fileID: 2141770681}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6544257778821518968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 177.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -783.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889692758853664317, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550741414450069349, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_Name
+      value: Gafanhoto_PS
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550741414450069349, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f447b385bfbba554fbc7699caf26d758, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -35593,3 +35661,4 @@ SceneRoots:
   - {fileID: 1869285967}
   - {fileID: 1544797997}
   - {fileID: 252233094}
+  - {fileID: 6544257778821518968}
