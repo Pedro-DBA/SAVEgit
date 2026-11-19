@@ -10,7 +10,6 @@ public class ScreenSettings : MonoBehaviour
 
     private void Start()
     {
-        // Reflete o estado real da tela (começa ligado se o jogo abriu em tela cheia)
         fullscreenToggle.SetIsOnWithoutNotify(Screen.fullScreen);
         fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
     }
@@ -24,7 +23,6 @@ public class ScreenSettings : MonoBehaviour
     {
         if (isFullscreen)
         {
-            // Volta para a resolução nativa do monitor
             int width = Display.main.systemWidth;
             int height = Display.main.systemHeight;
             Screen.SetResolution(width, height, FullScreenMode.FullScreenWindow);

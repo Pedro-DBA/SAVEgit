@@ -11,10 +11,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start() => ShowMain();
 
-    // Botão Jogar do menu principal
     public void ShowTutorial() => Show(tutorialPanel);
 
-    // Botão Jogar do Panel_Tutorial
     public void StartGame() => SceneManager.LoadScene(gameSceneName);
 
     public void ShowOptions() => Show(optionsPanel);
